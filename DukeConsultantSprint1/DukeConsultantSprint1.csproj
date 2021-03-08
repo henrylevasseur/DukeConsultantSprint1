@@ -67,10 +67,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EmpLogin.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="LoginType.aspx" />
     <Content Include="TestForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerMaster.Master.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerMaster.Master.designer.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="EmpLogin.aspx.cs">
+      <DependentUpon>EmpLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpLogin.aspx.designer.cs">
+      <DependentUpon>EmpLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeMaster.Master.cs">
+      <DependentUpon>EmployeeMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeMaster.Master.designer.cs">
+      <DependentUpon>EmployeeMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginType.aspx.cs">
+      <DependentUpon>LoginType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginType.aspx.designer.cs">
+      <DependentUpon>LoginType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestForm.aspx.cs">
       <DependentUpon>TestForm.aspx</DependentUpon>
@@ -81,6 +120,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EmployeeMaster.Master" />
+    <Content Include="CustomerMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

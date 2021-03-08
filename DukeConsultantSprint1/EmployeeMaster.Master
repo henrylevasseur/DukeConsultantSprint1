@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EmployeeMaster.master.cs" Inherits="DukeConsultantSprint1.EmployeeMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div>
+            <asp:Table ID="Table1" runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="Label1" runat="server" Text="Employee Portal" Font-Bold Font-Size ="20" ForeColor="Blue"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Label ID="masterNames" runat="server" Text="Henry LeVasseur and Patrick Sullivan, Dr. Ezell Section 4" Font-Bold Font-Size ="20"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Label ID="lblUser" runat="server" Text="" ForeColor="Green" Font-Size="20"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnLogout" runat="server" Text="Log Out" OnClick="btnLogout_Click" />
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnGoToHome" runat="server" Text="Go To Homepage" OnClick="btnGoToHome_Click" />
+                    </asp:TableCell>                    
+                </asp:TableRow>
+            </asp:Table>
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
