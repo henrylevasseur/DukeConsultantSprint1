@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.5.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,19 +70,100 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreateAccount.aspx" />
+    <Content Include="CustomerHomepage.aspx" />
+    <Content Include="EmpAddCustomer.aspx" />
+    <Content Include="EmpAddItem.aspx" />
+    <Content Include="EmpAddService.aspx" />
+    <Content Include="EmpAddVehicle.aspx" />
+    <Content Include="EmpAssignAuctionItems.aspx" />
+    <Content Include="EmpEditTicket.aspx" />
+    <Content Include="EmpHomepage.aspx" />
     <Content Include="EmpLogin.aspx" />
+    <Content Include="EmpSearchCustomer.aspx" />
+    <Content Include="EmpViewRequest.aspx" />
+    <Content Include="EmpViewTicket.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginType.aspx" />
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="ServiceRequest.aspx" />
     <Content Include="TestForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHomepage.aspx.cs">
+      <DependentUpon>CustomerHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerHomepage.aspx.designer.cs">
+      <DependentUpon>CustomerHomepage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerMaster.Master.cs">
       <DependentUpon>CustomerMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CustomerMaster.Master.designer.cs">
       <DependentUpon>CustomerMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="EmpAddCustomer.aspx.cs">
+      <DependentUpon>EmpAddCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpAddCustomer.aspx.designer.cs">
+      <DependentUpon>EmpAddCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpAddItem.aspx.cs">
+      <DependentUpon>EmpAddItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpAddItem.aspx.designer.cs">
+      <DependentUpon>EmpAddItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpAddService.aspx.cs">
+      <DependentUpon>EmpAddService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpAddService.aspx.designer.cs">
+      <DependentUpon>EmpAddService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpAddVehicle.aspx.cs">
+      <DependentUpon>EmpAddVehicle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpAddVehicle.aspx.designer.cs">
+      <DependentUpon>EmpAddVehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpAssignAuctionItems.aspx.cs">
+      <DependentUpon>EmpAssignAuctionItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpAssignAuctionItems.aspx.designer.cs">
+      <DependentUpon>EmpAssignAuctionItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpEditTicket.aspx.cs">
+      <DependentUpon>EmpEditTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpEditTicket.aspx.designer.cs">
+      <DependentUpon>EmpEditTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpHomepage.aspx.cs">
+      <DependentUpon>EmpHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpHomepage.aspx.designer.cs">
+      <DependentUpon>EmpHomepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="EmpLogin.aspx.cs">
       <DependentUpon>EmpLogin.aspx</DependentUpon>
@@ -94,6 +178,27 @@
     </Compile>
     <Compile Include="EmployeeMaster.Master.designer.cs">
       <DependentUpon>EmployeeMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="EmpSearchCustomer.aspx.cs">
+      <DependentUpon>EmpSearchCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpSearchCustomer.aspx.designer.cs">
+      <DependentUpon>EmpSearchCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpViewRequest.aspx.cs">
+      <DependentUpon>EmpViewRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpViewRequest.aspx.designer.cs">
+      <DependentUpon>EmpViewRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpViewTicket.aspx.cs">
+      <DependentUpon>EmpViewTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpViewTicket.aspx.designer.cs">
+      <DependentUpon>EmpViewTicket.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -111,6 +216,13 @@
     </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceRequest.aspx.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceRequest.aspx.designer.cs">
+      <DependentUpon>ServiceRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TestForm.aspx.cs">
       <DependentUpon>TestForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,6 +235,8 @@
     <Content Include="EmployeeMaster.Master" />
     <Content Include="CustomerMaster.Master" />
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
