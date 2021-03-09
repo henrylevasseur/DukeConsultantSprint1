@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+
             <br />
                 <%--Create Header, followed by Table With Each Necessary Field--%>
                 <asp:Label ID="loginHeader" runat="server" Text="Please Enter Customer Information Below" Font-Bold Font-Size ="20"></asp:Label>
