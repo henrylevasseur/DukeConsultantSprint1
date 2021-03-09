@@ -47,6 +47,7 @@
                             <asp:RequiredFieldValidator ID="rfEmailValidator" ControlToValidate="txtEmail" ValidationGroup="saveValidation" runat="server" ErrorMessage="Please Enter an Email Address" ForeColor="Red"></asp:RequiredFieldValidator>                          
                         </asp:TableCell>
                     </asp:TableRow>
+
                     <asp:TableRow>
                         <asp:TableCell>
                             <asp:Label ID="lblPW" runat="server" Font-Bold Text="Password: "></asp:Label>
