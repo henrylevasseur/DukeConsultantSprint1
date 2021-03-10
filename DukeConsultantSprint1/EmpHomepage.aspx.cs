@@ -51,6 +51,14 @@ namespace DukeConsultantSprint1
             {
                 Response.Redirect("EmpSearchCustomer.aspx");
             }
+            else if (selected.Equals("Add Room Information"))
+            {
+                Response.Redirect("RoomForm.aspx");
+            }
+            else if (selected.Equals("Move Form"))
+            {
+                Response.Redirect("MoveForm.aspx");
+            }
         }
         //Choosing an Item in the list box allows Employees to view the request Information.
         protected void btnViewRequest_Click(object sender, EventArgs e)

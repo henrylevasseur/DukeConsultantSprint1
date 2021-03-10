@@ -19,6 +19,8 @@
                         <asp:ListItem Value ="View Service History"></asp:ListItem>
                         <asp:ListItem Value ="Assign Auction Items"></asp:ListItem>
                         <asp:ListItem Value ="Search for Customer"></asp:ListItem>
+                        <asp:ListItem Value ="Add Room Information"></asp:ListItem>
+                        <asp:ListItem Value ="Move Form"></asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     <asp:Button ID="btnProceed" runat="server" Text="Proceed" OnClick="btnProceed_Click1"/>
