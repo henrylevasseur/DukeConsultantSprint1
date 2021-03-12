@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMaster.Master" AutoEventWireup="true" CodeBehind="EmpEditTicket.aspx.cs" Inherits="DukeConsultantSprint1.EmpEditTicket" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <link href="Content/bootstrap.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,8 +9,8 @@
         <div>
             <fieldset>
                 <%-- Creates Header and Table for UI to display necessary information and include necessary validators --%>
-                <asp:Label ID="lblTitle" runat="server" Text="Add Employee to service ticket history" Font-Bold Font-Size="20"></asp:Label>
-                <asp:Table ID="Table1" runat="server">
+                <asp:Label ID="lblTitle" runat="server" Text="Add Employee to service ticket history" Font-Bold Font-Size="15"  Font-Name="Open Sans"></asp:Label>
+                <asp:Table ID="Table1" runat="server" class="table-warning">
                     <asp:TableRow>
                         <asp:TableCell> 
                             <asp:Label ID="lblService" runat="server" Text="Choose Service: "></asp:Label>
@@ -36,7 +37,7 @@
                             <asp:Label ID="lblthDate" runat="server" Text="Date: "></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtthDate" runat="server" TextMode ="Date"></asp:TextBox>
+                            <asp:TextBox ID="txtthDate" runat="server" TextMode ="Date" type="Date" class="form-control" placeholder="Date"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfDateValidator" ControlToValidate="txtthDate" ValidationGroup="iSaveValidation" runat="server" ErrorMessage="Please Enter a Date" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -47,7 +48,7 @@
                             <asp:Label ID="lblNoteTitle" runat="server" Text="Note Title:"></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtNoteTitle" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtNoteTitle" runat="server" type="Note Title" class="form-control" placeholder="Note Title"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfTitleValidator" ControlToValidate="txtNoteTitle" ValidationGroup ="iSaveValidation" runat="server" ErrorMessage="Please Enter a Title" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -70,7 +71,7 @@
                             <asp:Label ID="lblNote" runat="server" Text="Note: "></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                             <asp:TextBox ID="txtNote" runat="server" Rows ="10" Columns="50" TextMode="MultiLine"></asp:TextBox>
+                             <asp:TextBox ID="txtNote" runat="server" Rows ="10" Columns="50" TextMode="MultiLine" type="Note" class="form-control" placeholder="Note"></asp:TextBox>
                         </asp:TableCell>
                          <asp:TableCell>
                              <asp:RequiredFieldValidator ID="rfBodyValidator" runat="server" ControlToValidate="txtNote" ValidationGroup="iSaveValidation" ErrorMessage="Please Enter a Note" ForeColor ="Red"></asp:RequiredFieldValidator>
@@ -117,9 +118,9 @@
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>             
-                <asp:Button ID="SaveBtn" runat="server" ValidationGroup="iSaveValidation" Text="Save" OnClick="SaveBtn_Click"/>
+                <asp:Button ID="SaveBtn" runat="server" ValidationGroup="iSaveValidation" Text="Save" OnClick="SaveBtn_Click" class="btn btn-primary" type="submit"/>
                 &nbsp;
-                <asp:Button ID="ClearBtn" runat="server" Text="Clear" OnClick="ClearBtn_Click" />
+                <asp:Button ID="ClearBtn" runat="server" Text="Clear" OnClick="ClearBtn_Click" type="button" class="btn btn-outline-primary" />
                 <%-- Data sources provide an employee list and a list of services from which to draw service tickets --%>
                  <asp:SqlDataSource
                     ID="empList"
@@ -136,6 +137,8 @@
 
             </fieldset>
         </div> 
+    <script src="Scripts/jquery-3.5.1.slim.js"></script>
+    <script src="Scripts/popper.min.js"></script>
     </body>
 </html>
 </asp:Content>

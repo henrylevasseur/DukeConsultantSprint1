@@ -9,7 +9,7 @@
             <div>
                 <br />
                 <fieldset>
-                    <asp:Table ID="Table1" runat="server">
+                    <asp:Table ID="Table1" runat="server" >
                     <asp:TableRow>
                         <asp:TableCell>
                             <asp:Label ID="lblService" runat="server" Text="Service:"></asp:Label>
@@ -46,6 +46,8 @@
                 </fieldset>            
                 <br />      
             </div>
+        <script src="Scripts/jquery-3.5.1.slim.js"></script>
+        <script src="Scripts/popper.min.js"></script>
         </body>
     </html>
 </asp:Content>
