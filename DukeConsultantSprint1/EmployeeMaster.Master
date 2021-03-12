@@ -7,27 +7,28 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <div>
-            <asp:Table ID="Table1" runat="server">
+            <asp:Table ID="Table1" runat="server"  class="table-warning">
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="Label1" runat="server" Text="Employee Portal" Font-Bold Font-Size ="20" ForeColor="Blue"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Employee Portal" Font-Bold Font-Size ="15" ForeColor="Blue"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:Label ID="masterNames" runat="server" Text="Henry LeVasseur and Patrick Sullivan, Dr. Ezell Section 4" Font-Bold Font-Size ="20"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Label ID="lblUser" runat="server" Text="" ForeColor="Green" Font-Size="20"></asp:Label>
+                        <asp:Label ID="lblUser" runat="server" Text="" ForeColor="Green" Font-Size="15"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnLogout" runat="server" Text="Log Out" OnClick="btnLogout_Click" />
+                        <asp:Button ID="btnLogout" runat="server" Text="Log Out" OnClick="btnLogout_Click" class="btn btn-primary" type="submit"  />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnGoToHome" runat="server" Text="Go To Homepage" OnClick="btnGoToHome_Click" />
+                        <asp:Button ID="btnGoToHome" runat="server" Text="Go To Homepage" OnClick="btnGoToHome_Click" class="btn btn-primary" type="submit" />
                     </asp:TableCell>                    
                 </asp:TableRow>
             </asp:Table>
@@ -37,5 +38,7 @@
             </div>
         </div>
     </form>
+    <script src="Scripts/jquery-3.5.1.slim.js"></script>
+    <script src="Scripts/popper.min.js"></script>
 </body>
 </html>
