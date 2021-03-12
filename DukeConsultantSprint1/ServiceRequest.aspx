@@ -10,7 +10,7 @@
                     <asp:Label ID="lblServType" runat="server" Text="Service Type:  "></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:DropDownList ID="DrpDwnServType" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DrpDwnServType_SelectedIndexChanged">
+                    <asp:DropDownList ID="DrpDwnServType" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DrpDwnServType_SelectedIndexChanged" >
                         <asp:ListItem Value ="Move"></asp:ListItem>
                             <asp:ListItem Value ="Auction"></asp:ListItem>
                     </asp:DropDownList>
@@ -21,7 +21,7 @@
                     <asp:Label ID="lblServDate" runat="server" Text="Service Date:  " ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtServDate" runat="server" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox ID="txtServDate" runat="server" TextMode="Date" type="Service Date" class="form-control" placeholder="Service Date"></asp:TextBox>
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:RequiredFieldValidator ID="srfServiceDateValidator" ControlToValidate="txtServDate" ValidationGroup="saveValidation" runat="server" ErrorMessage="Please Choose a Service Date" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -32,7 +32,7 @@
                     <asp:Label ID="lblOriginAddress" runat="server" Text="Origin Address: " Visible="true"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="txtOrigin" runat="server" Visible="true"></asp:TextBox>
+                    <asp:TextBox ID="txtOrigin" runat="server" Visible="true" type="Origin Address" class="form-control" placeholder="Origin Address"></asp:TextBox>
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:RequiredFieldValidator ID="rfOrigValidator" runat="server" ControlToValidate="txtOrigin" ValidationGroup="saveValidation" ErrorMessage="Please Enter Origin Address" ForeColor="Red" Visible="true"></asp:RequiredFieldValidator>
@@ -43,7 +43,7 @@
                     <asp:Label ID="lblDelivAdd" runat="server" Text="Delivery Address:"></asp:Label>
                 </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="txtDelivAdd" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDelivAdd" runat="server" type="Delivery Address" class="form-control" placeholder="Delivery Address"></asp:TextBox>
                     </asp:TableCell>
                 <asp:TableCell>
                     <asp:RequiredFieldValidator ID="rfAddValidator" runat="server" ControlToValidate ="txtDelivAdd" ValidationGroup="saveValidation" ErrorMessage="Please Enter an Address for Auction, or Both Addresses for Move" ForeColor="Red" Font-Size="10"></asp:RequiredFieldValidator>
@@ -59,7 +59,7 @@
                             <asp:Label runat="server" Text="Cleaning:"  ></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:CheckBox ID="chkCleaning" runat="server" />
+                            <asp:CheckBox ID="chkCleaning" runat="server" class="form-check-input" />
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
@@ -67,7 +67,7 @@
                             <asp:Label runat="server" Text="Storage:"  ></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:CheckBox ID="chkStorage" runat="server" />
+                            <asp:CheckBox ID="chkStorage" runat="server" class="form-check-input" />
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
@@ -75,7 +75,7 @@
                             <asp:Label runat="server" Text="Trash Removal:"  ></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:CheckBox ID="chkTrashRemoval" runat="server" />
+                            <asp:CheckBox ID="chkTrashRemoval" runat="server" class="form-check-input"/>
                         </asp:TableCell>
                     </asp:TableRow>
             </asp:Table>

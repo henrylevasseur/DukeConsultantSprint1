@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -24,7 +25,7 @@
                         <asp:Label ID="lblUser" runat="server" Text="" ForeColor="Green" Font-Size="20"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnLogout" runat="server" Text="Log Out" OnClick="btnLogout_Click" />
+                        <asp:Button ID="btnLogout" runat="server" Text="Log Out" OnClick="btnLogout_Click" class="btn btn-primary" type="submit"/>
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
@@ -34,5 +35,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script src="Scripts/jquery-3.5.1.slim.js"></script>
+    <script src="Scripts/popper.min.js"></script>
 </body>
 </html>

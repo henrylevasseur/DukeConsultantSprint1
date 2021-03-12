@@ -22,7 +22,7 @@
                             <asp:Label ID="lblFName" runat="server" Text="First Name: " Font-Bold></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtFName" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtFName" runat="server" type="First Name" class="form-control" placeholder="First Name"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfFNameValidator" ControlToValidate ="txtFName" ValidationGroup="saveValidation" runat="server" ErrorMessage="Please Enter a First Name" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -33,7 +33,7 @@
                             <asp:Label ID="lblLName" runat="server" Text="Last Name: " Font-Bold></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtLName" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtLName" runat="server" type="Last Name" class="form-control" placeholder="Last Name"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfLNameValidator" ControlToValidate="txtLName" ValidationGroup="saveValidation" runat="server" ErrorMessage="Please Enter a Last Name" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -44,7 +44,7 @@
                             <asp:Label ID="lblEmail" runat="server" Text="Email(Username): "  Font-Bold></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" type="Email" class="form-control" placeholder="Email"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfEmailValidator" ControlToValidate="txtEmail" ValidationGroup="saveValidation" runat="server" ErrorMessage="Please Enter an Email Address" ForeColor="Red"></asp:RequiredFieldValidator>                          
@@ -56,7 +56,7 @@
                             <asp:Label ID="lblPW" runat="server" Font-Bold Text="Password: "></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtPW" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="txtPW" runat="server" TextMode="Password" type="Password" class="form-control" placeholder="Password"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfPW" runat="server" ControlToValidate="txtPW" ValidationGroup ="saveValidation" ErrorMessage="Choose a Password" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -67,7 +67,7 @@
                             <asp:Label ID="lblPW2" runat="server" Font-Bold Text=" Confirm Password: "></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtPW2" runat="server" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="txtPW2" runat="server" TextMode="Password" type="Confirm Password" class="form-control" placeholder="Confirm Password"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:CompareValidator ID="cPW" runat="server" ValidationGroup="saveValidation" ControlToValidate="txtPW2" ControlToCompare="txtPW" Operator="Equal" ErrorMessage="Passwords Must Match" ForeColor="Red"></asp:CompareValidator>
@@ -75,10 +75,10 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Label ID="lblAddress" runat="server" Text="Address: " Font-Bold></asp:Label>
+                            <asp:Label ID="lblAddress" runat="server" Text="Address: "  Font-Bold ></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtAddress" runat="server" type="Address" class="form-control" placeholder="Address"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfAddressValidator" ControlToValidate="txtAddress" ValidationGroup="saveValidation" runat="server" ErrorMessage="Please Enter an Address" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -89,7 +89,7 @@
                             <asp:Label ID="lblPhone" runat="server" Text="Phone Number:" Font-Bold></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtPhone" runat="server" type="Phone" class="form-control" placeholder="Phone"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="PhoneValidator" ControlToValidate="txtPhone" ValidationGroup="saveValidation" runat="server" ErrorMessage="Please Enter a Phone Number" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -113,7 +113,7 @@
                             <asp:Label ID="lblDesc" runat="server" Text="How Did you Initially Hear About us? " Font-Bold></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtDesc" runat="server" type="Initial Method" class="form-control" placeholder="Initial Method"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfDescValidator" runat="server" ControlToValidate="txtDesc" ValidationGroup="saveValidation" ErrorMessage="Please Enter Text Here" ForeColor ="Red"></asp:RequiredFieldValidator>
