@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMaster.Master" AutoEventWireup="true" CodeBehind="EmpAssignAuctionItems.aspx.cs" Inherits="DukeConsultantSprint1.EmpAssignAuctionItems" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,9 +27,9 @@
                         </asp:TableCell>
                     </asp:TableRow>
                     </asp:Table>
-                    <asp:Button ID="btnAssign" runat="server" Text="Assign Items" OnClick="btnAssign_Click" />
+                    <asp:Button ID="btnAssign" runat="server" Text="Assign Items" OnClick="btnAssign_Click" class="btn btn-primary" type="submit" />
                     <br />
-                    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblStatus" runat="server" Text="" BackColor="#FFE384"></asp:Label>
                 <%-- Sql Data sources fill menus with data to choose from --%>
                 <asp:SqlDataSource
                     ID="serviceData"
