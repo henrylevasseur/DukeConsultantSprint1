@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CustomerMaster.Master" AutoEventWireup="true" CodeBehind="ServiceRequest.aspx.cs" Inherits="DukeConsultantSprint1.ServiceRequest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <link href="Content/bootstrap.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
-        <asp:Table ID="tableService" runat="server">
+        <asp:Table ID="tableService" runat="server" class="table-warning">
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="lblServType" runat="server" Text="Service Type:  "></asp:Label>
@@ -78,11 +79,13 @@
                         </asp:TableCell>
                     </asp:TableRow>
             </asp:Table>
-        <asp:Button ID="saveBtn" runat="server" ValidationGroup="saveValidation" Text="Save" OnClick="saveBtn_Click" />
+        <asp:Button ID="saveBtn" runat="server" ValidationGroup="saveValidation" Text="Save" OnClick="saveBtn_Click" class="btn btn-primary" type="submit"/>
         &nbsp;
-        <asp:Button ID="clearBtn" runat="server" Text="Clear" OnClick="clearBtn_Click"/>
+        <asp:Button ID="clearBtn" runat="server" Text="Clear" OnClick="clearBtn_Click" type="button" class="btn btn-outline-primary"/>
         &nbsp;
-        <asp:Button ID="cancelBtn" runat="server" Text="Return to Home" OnClick="cancelBtn_Click" />
+        <asp:Button ID="cancelBtn" runat="server" Text="Return to Home" OnClick="cancelBtn_Click" type="button" class="btn btn-outline-primary"/>
         <br />
-    <asp:Label ID="lblSaveStatus" runat="server" Text=""></asp:Label>
+    <asp:Label ID="lblSaveStatus" runat="server" Text="" BackColor="#FFE384"></asp:Label>
+    <script src="Scripts/jquery-3.5.1.slim.js"></script>
+    <script src="Scripts/popper.min.js"></script>
 </asp:Content>
