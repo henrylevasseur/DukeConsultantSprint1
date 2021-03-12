@@ -12,7 +12,7 @@
              <%-- Create a simple login form with a username box, and password box with text in password mode --%>
             <asp:Button ID="btnReturn" runat="server" Text="Return" OnClick="btnReturn_Click" />
             <br />
-            <asp:Label ID="itemHeader" runat="server" Text="Please Enter Login Information Below" Font-Bold Font-Size ="20"></asp:Label>
+            <asp:Label ID="itemHeader" runat="server" Text="Please Enter Login Information Below" Font-Bold Font-Size ="15" Font-Name="Open Sans"></asp:Label>
             <br />
             <asp:Table ID="tableLogin" runat="server">
                 <asp:TableRow>

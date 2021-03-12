@@ -10,7 +10,7 @@
             <div>
                 <br />
                 <%--Create Header, followed by Table With Each Necessary Field--%>
-                <asp:Label ID="loginHeader" runat="server" Text="Please Enter Customer Information Below" Font-Bold Font-Size ="15"></asp:Label>
+                <asp:Label ID="loginHeader" runat="server" Text="Please Enter Customer Information Below" Font-Bold Font-Size ="15" Font-Name="Open Sans"></asp:Label>
                 <br />
                 <asp:Table ID="tableCustomer" runat="server" class="table-warning">
                     <asp:TableRow>
