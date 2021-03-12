@@ -81,6 +81,36 @@
                             <asp:Label ID="lblStatus" runat="server" Text="" ForeColor="Red"></asp:Label>
                         </asp:TableCell>
                     </asp:TableRow>
+                    
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label ID="lblAddOn" runat="server" Text=" Add Additional Services" Font-Bold Font-Size="14"></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label runat="server" Text="Cleaning:"  ></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:CheckBox ID="chkCleaning" runat="server" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label runat="server" Text="Storage:"  ></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:CheckBox ID="chkStorage" runat="server" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label runat="server" Text="Trash Removal:"  ></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:CheckBox ID="chkTrashRemoval" runat="server" />
+                        </asp:TableCell>
+                    </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
                             <asp:Label ID="lblTHSaveStatus" runat="server" Text=""></asp:Label>
@@ -94,13 +124,13 @@
                  <asp:SqlDataSource
                     ID="empList"
                     runat="server"
-                    ConnectionString="<%$ ConnectionStrings:Lab3 %>"
+                    ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
                     SelectCommand="Select eName from Employee">
                 </asp:SqlDataSource>
                 <asp:SqlDataSource
                     ID="serviceData"
                     runat="server"
-                    ConnectionString="<%$ ConnectionStrings:Lab3 %>"
+                    ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
                     SelectCommand="select CONCAT(ServiceTicket.stID, '-- ', Customer.cFName, ' ', Customer.cLName, ' ', Service.sType, ' ', Service.sDate) AS Service from Customer right join ServiceTicket on ServiceTicket.CID = Customer.CID right join Service on Service.sID = ServiceTicket.sID">
                 </asp:SqlDataSource>
 

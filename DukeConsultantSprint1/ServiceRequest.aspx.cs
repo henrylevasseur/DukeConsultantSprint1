@@ -38,7 +38,7 @@ namespace DukeConsultantSprint1
                 string cUsername = Session["UserName"].ToString();
                 string sqlQuery1 = "Select cID from Customer WHERE cEmail = @Username";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand = new SqlCommand(sqlQuery1, sqlConnect1);
                 selectCommand.Connection = sqlConnect1;
                 selectCommand.Parameters.AddWithValue("@Username", cUsername);
@@ -52,7 +52,7 @@ namespace DukeConsultantSprint1
                 //Pull the highest service request and add one to ensure you have a unique ID
                 string sqlQuery2 = "Select max(srID) as srID from ServiceRequest";
                 SqlConnection sqlConnect2 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand2 = new SqlCommand();
                 sqlCommand2.Connection = sqlConnect2;
                 sqlCommand2.CommandType = CommandType.Text;
@@ -69,19 +69,46 @@ namespace DukeConsultantSprint1
                 sqlConnect2.Close();
                 //Create two different Queries, since Auctions will only have one Address. Choose depending on selection in dropdown.
                 string sqlQuery4 = "";
-                if (DrpDwnServType.SelectedValue.ToString().Equals("Auction"))
+                string cleaning = "";
+                string storage = "";
+                string TR = "";
+                if (chkCleaning.Checked)
                 {
-                    sqlQuery4 = "Insert into ServiceRequest(srID, sType, sDate, delAdd, cID, status) " +
-                      "VALUES(@srID, @sType, @Date, @delAdd, @cID, 'Active')";
+                    cleaning = "Yes";
                 }
                 else
                 {
-                    sqlQuery4 = "Insert into ServiceRequest(srID, sType, sDate, originAddress, delAdd, cID, status) " +
-                      "VALUES(@srID, @sType, @Date, @originAddress, @delAdd, @cID, 'Active')";
+                    cleaning = "No";
+                }
+                if (chkStorage.Checked)
+                {
+                    storage = "Yes";
+                }
+                else
+                {
+                    storage = "No";
+                }
+                if (chkTrashRemoval.Checked)
+                {
+                    TR = "Yes";
+                }
+                else
+                {
+                    TR = "No";
+                }
+                if (DrpDwnServType.SelectedValue.ToString().Equals("Auction"))
+                {
+                    sqlQuery4 = "Insert into ServiceRequest(srID, srType, sDate, delAdd, cID, status, aoCleaning, aoStorage, aoTR) " +
+                      "VALUES(@srID, @sType, @Date, @delAdd, @cID, 'Active', @Cleaning, @Storage, @TrashRemoval)";
+                }
+                else
+                {
+                    sqlQuery4 = "Insert into ServiceRequest(srID, srType, sDate, originAddress, delAdd, cID, status, aoCleaning, aoStorage, aoTR) " +
+                      "VALUES(@srID, @sType, @Date, @originAddress, @delAdd, @cID, 'Active', @Cleaning, @Storage, @TrashRemoval)";
                 }
                 //Connect and use parameters before inserting records.
                 SqlConnection sqlConnect4 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery4, sqlConnect4);
                 insertCommand.Connection = sqlConnect4;
                 insertCommand.Parameters.AddWithValue("@srID", currentsrID);
@@ -90,6 +117,9 @@ namespace DukeConsultantSprint1
                 insertCommand.Parameters.AddWithValue("@Date", txtServDate.Text);
                 insertCommand.Parameters.AddWithValue("@originAddress", txtOrigin.Text);
                 insertCommand.Parameters.AddWithValue("@delAdd", txtDelivAdd.Text);
+                insertCommand.Parameters.AddWithValue("@Cleaning", cleaning);
+                insertCommand.Parameters.AddWithValue("@Storage", storage);
+                insertCommand.Parameters.AddWithValue("@TrashRemoval", TR);
                 sqlConnect4.Open();
                 SqlDataReader queryResults4 = insertCommand.ExecuteReader();
                 queryResults4.Close();

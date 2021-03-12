@@ -48,7 +48,7 @@ namespace DukeConsultantSprint1
                 //Create query and connection that provides a unique tickethistoryID for new record
                 string sqlQuery1 = "Select max(thID) as maxthID from TicketHistory";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand1 = new SqlCommand();
                 sqlCommand1.Connection = sqlConnect1;
                 sqlCommand1.CommandType = CommandType.Text;
@@ -66,7 +66,7 @@ namespace DukeConsultantSprint1
                 //Find employee ID based on Employee Name
                 string sqlQuery = "Select eID from Employee WHERE eName = @EmpName";
                 SqlConnection sqlConnect = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand = new SqlCommand(sqlQuery, sqlConnect);
                 selectCommand.Connection = sqlConnect;
                 selectCommand.Parameters.AddWithValue("@EmpName", thEmployee);
@@ -83,7 +83,7 @@ namespace DukeConsultantSprint1
                 string sqlQuery4 = "Insert into TicketHistory(thID, thDate ,thNoteTitle, thNote, stID, eID, stStatus) " +
                        "VALUES (@thID, @Date, @Title, @Note, @stID, @eID, @Status)";
                 SqlConnection sqlConnect4 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery4, sqlConnect4);
                 insertCommand.Connection = sqlConnect4;
                 insertCommand.Parameters.AddWithValue("@thID", currentthID);
@@ -97,7 +97,81 @@ namespace DukeConsultantSprint1
                 SqlDataReader queryResults4 = insertCommand.ExecuteReader();
                 queryResults4.Close();
                 sqlConnect4.Close();
-                lblTHSaveStatus.Text = "Workflow added Successfully!";
+
+                string sqlQuery10 = "Select max(aoID) as maxaoID from AddOnService";
+                SqlConnection sqlConnect10 = new SqlConnection
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
+                SqlCommand sqlCommand10 = new SqlCommand();
+                sqlCommand10.Connection = sqlConnect10;
+                sqlCommand10.CommandType = CommandType.Text;
+                sqlCommand10.CommandText = sqlQuery10;
+                sqlConnect10.Open();
+                SqlDataReader queryResults10 = sqlCommand10.ExecuteReader();
+                int currentaoID = 0;
+                while (queryResults10.Read())
+                {
+                    currentaoID = queryResults10.GetInt32(0);
+                }
+                queryResults10.Close();
+                sqlConnect10.Close();
+
+                if (chkCleaning.Checked)
+                {
+                    currentaoID = currentaoID + 1;
+                    string sqlQuery12 = "INSERT INTO AddOnService(aoID, aoType, stID, aoCost) " +
+                    "VALUES(@aoID, @aoType, @stID, @aoCost)"; ;
+                    SqlConnection sqlConnect12 = new SqlConnection
+                        (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
+                    SqlCommand insertCommand12 = new SqlCommand(sqlQuery12, sqlConnect12);
+                    insertCommand12.Connection = sqlConnect12;
+                    insertCommand12.Parameters.AddWithValue("@aoID", currentaoID);
+                    insertCommand12.Parameters.AddWithValue("@aoType", "Cleaning");
+                    insertCommand12.Parameters.AddWithValue("@stID", stID);
+                    insertCommand12.Parameters.AddWithValue("@aoCost", "100.00");
+                    sqlConnect12.Open();
+                    SqlDataReader queryResults12 = insertCommand12.ExecuteReader();
+                    queryResults12.Close();
+                    sqlConnect12.Close();
+                }
+                if (chkStorage.Checked)
+                {
+                    currentaoID = currentaoID + 1;
+                    string sqlQuery13 = "INSERT INTO AddOnService(aoID, aoType, stID, aoCost) " +
+                    "VALUES(@aoID, @aoType, @stID, @aoCost)"; ;
+                    SqlConnection sqlConnect13 = new SqlConnection
+                        (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
+                    SqlCommand insertCommand13 = new SqlCommand(sqlQuery13, sqlConnect13);
+                    insertCommand13.Connection = sqlConnect13;
+                    insertCommand13.Parameters.AddWithValue("@aoID", currentaoID);
+                    insertCommand13.Parameters.AddWithValue("@aoType", "Storage");
+                    insertCommand13.Parameters.AddWithValue("@stID", stID);
+                    insertCommand13.Parameters.AddWithValue("@aoCost", "100.00");
+                    sqlConnect13.Open();
+                    SqlDataReader queryResults13 = insertCommand13.ExecuteReader();
+                    queryResults13.Close();
+                    sqlConnect13.Close();
+                }
+                if (chkStorage.Checked)
+                {
+                    currentaoID = currentaoID + 1;
+                    string sqlQuery14 = "INSERT INTO AddOnService(aoID, aoType, stID, aoCost) " +
+                    "VALUES(@aoID, @aoType, @stID, @aoCost)"; ;
+                    SqlConnection sqlConnect14 = new SqlConnection
+                        (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
+                    SqlCommand insertCommand14 = new SqlCommand(sqlQuery14, sqlConnect14);
+                    insertCommand14.Connection = sqlConnect14;
+                    insertCommand14.Parameters.AddWithValue("@aoID", currentaoID);
+                    insertCommand14.Parameters.AddWithValue("@aoType", "Trash Removal");
+                    insertCommand14.Parameters.AddWithValue("@stID", stID);
+                    insertCommand14.Parameters.AddWithValue("@aoCost", "100.00");
+                    sqlConnect14.Open();
+                    SqlDataReader queryResults14 = insertCommand14.ExecuteReader();
+                    queryResults14.Close();
+                    sqlConnect14.Close();
+
+                    lblTHSaveStatus.ForeColor = Color.Green;
+                    lblTHSaveStatus.Text = "Workflow added Successfully!";
+                }
             }
             //Catches SqlExceptions and displays message to user.
             catch (SqlException)

@@ -38,7 +38,7 @@ namespace DukeConsultantSprint1
                 //Create query and connection to find a new, unique ID value for the item. Close connection.
                 string sqlQuery1 = "Select max(itemID) as maxItemID from Inventory";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand1 = new SqlCommand();
                 sqlCommand1.Connection = sqlConnect1;
                 sqlCommand1.CommandType = CommandType.Text;
@@ -56,7 +56,7 @@ namespace DukeConsultantSprint1
                 //Add new item to inventory. Uses parameters.
                 string sqlQuery2 = "Insert into Inventory(itemID, itemName, itemValue) VALUES (@ItemID, @ItemName, @EstValue)";
                 SqlConnection sqlConnect2 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery2, sqlConnect2);
                 insertCommand.Connection = sqlConnect2;
                 insertCommand.Parameters.AddWithValue("@ItemID", currentItemID);
@@ -69,7 +69,7 @@ namespace DukeConsultantSprint1
                 //Add to InventoryService (Bridge) table to be able to associate Items with Services. Uses parameters.
                 string sqlQuery3 = "Insert into InventoryService(stID, itemID) VALUES (@stID, @itemID)";
                 SqlConnection sqlConnect3 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand2 = new SqlCommand(sqlQuery3, sqlConnect3);
                 insertCommand2.Connection = sqlConnect3;
                 insertCommand2.Parameters.AddWithValue("@stID", stID);

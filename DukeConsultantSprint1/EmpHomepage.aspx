@@ -35,8 +35,8 @@
                     <asp:SqlDataSource
                         ID="srData"
                         runat="server"
-                        ConnectionString="<%$ ConnectionStrings:Lab3 %>"
-                        SelectCommand="SELECT Concat(ServiceRequest.srID, '--', Customer.cFName, ' ', Customer.cLName, ' ', ServiceRequest.sType) AS SReq FROM ServiceRequest inner join Customer on ServiceRequest.cID = Customer.cID WHERE ServiceRequest.status = 'Active'">
+                        ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
+                        SelectCommand="SELECT Concat(ServiceRequest.srID, '--', Customer.cFName, ' ', Customer.cLName, ' ', ServiceRequest.srType) AS SReq FROM ServiceRequest inner join Customer on ServiceRequest.cID = Customer.cID WHERE ServiceRequest.status = 'Active'">
                     </asp:SqlDataSource>
                 </fieldset>
                 <br />      

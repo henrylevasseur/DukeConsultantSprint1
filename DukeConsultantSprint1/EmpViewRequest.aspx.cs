@@ -19,9 +19,9 @@ namespace DukeConsultantSprint1
             if (Session["activeSR"] != null)
             {
                 int activeSRID = Convert.ToInt32(Session["activeSR"]);
-                string sqlQuery = "SELECT ServiceRequest.sType, ServiceRequest.sDate, serviceRequest.originAddress, ServiceRequest.delAdd, Customer.cFName, Customer.cLName from ServiceRequest inner join Customer on Customer.cID = ServiceRequest.CID WHERE ServiceRequest.srID = " + activeSRID;
+                string sqlQuery = "SELECT ServiceRequest.srType, ServiceRequest.sDate, serviceRequest.originAddress, ServiceRequest.delAdd, Customer.cFName, Customer.cLName from ServiceRequest inner join Customer on Customer.cID = ServiceRequest.CID WHERE ServiceRequest.srID = " + activeSRID;
                 SqlConnection sqlConnect = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlQuery, sqlConnect);
                 DataTable dtGridView = new DataTable();
                 sqlAdapter.Fill(dtGridView);
@@ -34,7 +34,7 @@ namespace DukeConsultantSprint1
         {
             string sqlQuery4 = "UPDATE ServiceRequest SET status = 'Denied' WHERE srID = " + Session["activeSR"];
             SqlConnection sqlConnect4 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
             SqlCommand sqlCommand4 = new SqlCommand();
             sqlCommand4.Connection = sqlConnect4;
             sqlCommand4.CommandType = CommandType.Text;

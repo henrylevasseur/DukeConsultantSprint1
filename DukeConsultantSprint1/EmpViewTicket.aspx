@@ -40,7 +40,7 @@
             <asp:SqlDataSource
                     ID="servList"
                     runat="server"
-                    ConnectionString="<%$ ConnectionStrings:Lab3 %>"
+                    ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
                     SelectCommand="select CONCAT(ServiceTicket.stID, '-- ', Customer.cFName, ' ', Customer.cLName, ' ', Service.sType, ' ', Service.sDate) AS Service from Customer right join ServiceTicket on ServiceTicket.CID = Customer.CID right join Service on Service.sID = ServiceTicket.sID">      
             </asp:SqlDataSource>
      

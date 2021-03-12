@@ -35,7 +35,7 @@ namespace DukeConsultantSprint1
                 //Take max cid in order to set a new one guaranteed to be unique
                 string sqlQuery1 = "Select max(cID) as maxCID from Customer";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand1 = new SqlCommand();
                 sqlCommand1.Connection = sqlConnect1;
                 sqlCommand1.CommandType = CommandType.Text;
@@ -72,7 +72,7 @@ namespace DukeConsultantSprint1
                 //Insert into customer based on values in text fields
                 string sqlQuery3 = "INSERT INTO Customer (cID, cFName, cLName, cAddress, cPhone, cPhoneType, cDesc, cEmail, cInitialContactType) Values (@cID, @FirstName, @LastName, @Address, @Phone, @PhoneType, @Desc, @Email, '" + "Customer Portal" + "')";
                 SqlConnection sqlConnect3 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery3, sqlConnect3);
                 insertCommand.Connection = sqlConnect3;
                 insertCommand.Parameters.AddWithValue("@cID", currentCID);

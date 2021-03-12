@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <html xmlns="http://www.w3.org/1999/xhtml">
+    <html>
         <%-- Henry LeVasseur and Patrick Sullivan --%>
         <body>
         <div>
@@ -108,6 +108,35 @@
                             <asp:DropDownList ID="ddlEmployees" DataSourceID="empList" DataTextField="eName" runat="server"></asp:DropDownList>
                         </asp:TableCell>
                     </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label ID="lblAddOn" runat="server" Text="Add-On Services" Font-Bold Font-Size="14"></asp:Label>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label runat="server" Text="Cleaning:"  ></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:CheckBox ID="chkCleaning" runat="server" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label runat="server" Text="Storage:"  ></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:CheckBox ID="chkStorage" runat="server" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Label runat="server" Text="Trash Removal:"  ></asp:Label>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:CheckBox ID="chkTrashRemoval" runat="server" />
+                        </asp:TableCell>
+                    </asp:TableRow>
                 </asp:Table>
                 <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click"/>
                 &nbsp;
@@ -121,13 +150,13 @@
                 <asp:SqlDataSource
                     ID="custList"
                     runat="server"
-                    ConnectionString="<%$ ConnectionStrings:Lab3 %>"
+                    ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
                     SelectCommand="Select Concat(Customer.cFName, ' ', Customer.cLName) AS cName From Customer">
                 </asp:SqlDataSource>
                 <asp:SqlDataSource
                     ID="empList"
                     runat="server"
-                    ConnectionString="<%$ ConnectionStrings:Lab3 %>"
+                    ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
                     SelectCommand="Select eName from Employee">
                 </asp:SqlDataSource>
             </fieldset>

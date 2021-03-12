@@ -249,6 +249,42 @@ namespace DukeConsultantSprint1
         protected global::System.Web.UI.WebControls.DropDownList ddlEmployees;
 
         /// <summary>
+        /// lblAddOn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddOn;
+
+        /// <summary>
+        /// chkCleaning control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkCleaning;
+
+        /// <summary>
+        /// chkStorage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkStorage;
+
+        /// <summary>
+        /// chkTrashRemoval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkTrashRemoval;
+
+        /// <summary>
         /// btnPopulate control.
         /// </summary>
         /// <remarks>

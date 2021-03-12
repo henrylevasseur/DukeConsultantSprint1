@@ -34,7 +34,7 @@ namespace DukeConsultantSprint1
             //Gets the note based on stID (Found above in the same way as previously) and the chosen note title.
             String sqlQuery1 = "Select thNote from TicketHistory where stID = " + stID + " And thNoteTitle = '" + title + "'";
             SqlConnection sqlConnect1 = new SqlConnection
-                (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
             SqlCommand sqlCommand1 = new SqlCommand();
             sqlCommand1.Connection = sqlConnect1;
             sqlCommand1.CommandType = CommandType.Text;
@@ -69,7 +69,7 @@ namespace DukeConsultantSprint1
             //Query and connection fills gridview with rows regarding history of a ticket
             String sqlQuery = "Select TicketHistory.thID, TicketHistory.thDate, TicketHistory.thNoteTitle, Employee.eName, TicketHistory.stStatus FROM TicketHistory inner join Employee on Employee.eID = TicketHistory.eID where TicketHistory.stID = " + stID;
             SqlConnection sqlConnect = new SqlConnection
-                (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
             SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlQuery, sqlConnect);
             DataTable dtGridView = new DataTable();
             sqlAdapter.Fill(dtGridView);
@@ -78,7 +78,7 @@ namespace DukeConsultantSprint1
             //Get the titles of notes and add them to a hidden list box that becomes visible once the button is clicked
             String sqlQuery2 = "Select thNoteTitle from TicketHistory where stID = " + stID;
             SqlConnection sqlConnect2 = new SqlConnection
-                (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
             SqlDataAdapter sqlAdapter2 = new SqlDataAdapter(sqlQuery2, sqlConnect2);
             SqlCommand sqlCommand2 = new SqlCommand();
             sqlCommand2.Connection = sqlConnect2;
