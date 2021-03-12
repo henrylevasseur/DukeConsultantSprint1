@@ -5,16 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
+
     <form id="form1" runat="server">
         <div>
 
             <br />
                 <%--Create Header, followed by Table With Each Necessary Field--%>
-                <asp:Label ID="loginHeader" runat="server" Text="Please Enter Customer Information Below" Font-Bold Font-Size ="20"></asp:Label>
+                <asp:Label ID="loginHeader" runat="server" Text="Please Enter Customer Information Below:" Font-Bold Font-Size ="15" Font-Name="Open Sans"></asp:Label>
                 <br />
-                <asp:Table ID="tableCustomer" runat="server">
+                <asp:Table ID="tableCustomer" runat="server" class="table-warning" >
                     <asp:TableRow>
                         <asp:TableCell>
                             <asp:Label ID="lblFName" runat="server" Text="First Name: " Font-Bold></asp:Label>
@@ -119,17 +121,19 @@
                     </asp:TableRow>
                 </asp:Table>
             <%-- Add Buttons with OnClick Events --%>
-                <asp:Button ID="saveBtn" runat="server" ValidationGroup="saveValidation" Text="Save" OnClick ="saveBtn_Click"/>
+                <asp:Button ID="saveBtn" runat="server" ValidationGroup="saveValidation" Text="Save" OnClick ="saveBtn_Click" class="btn btn-primary" type="submit"/>
                 &nbsp;
-                <asp:Button ID="clearBtn" runat="server" Text="Clear" OnClick ="clearBtn_Click"/>
+                <asp:Button ID="clearBtn" runat="server" Text="Clear" OnClick ="clearBtn_Click" type="button" class="btn btn-outline-primary"/>
                 &nbsp;
-                <asp:Button ID="cancelBtn" runat="server" Text="Return to Home" OnClick="cancelBtn_Click"/>
+                <asp:Button ID="cancelBtn" runat="server" Text="Return to Home" OnClick="cancelBtn_Click" type="button" class="btn btn-outline-primary"/>
                 <br />
                 <br />
                 <%-- Display Status Message, which will be Empty until the save button is clicked. --%>
-                <asp:Label ID="saveStatus" runat="server" Text=""></asp:Label>
+                <asp:Label ID="saveStatus" runat="server" Text="" BackColor="#FFE384"></asp:Label>
         
         </div>
     </form>
+    <script src="Scripts/jquery-3.5.1.slim.js"></script>
+    <script src="Scripts/popper.min.js"></script>
 </body>
 </html>
