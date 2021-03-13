@@ -13,6 +13,7 @@
     <form id="form1" runat="server">
         <%-- In a Table with a single row, Include Our Names, A message regarding Login status, and a Logout button --%>
         <div>
+            <asp:Image ID="Image1" runat="server" ImageUrl ="/image/GVA_MLogo__BW.jpg" ControlStyle-Width="200px" ShowHeader="False" />
             <asp:Table ID="Table1" runat="server">
                 <asp:TableRow>
                     <asp:TableCell>
