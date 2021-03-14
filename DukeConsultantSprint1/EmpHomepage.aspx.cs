@@ -29,7 +29,7 @@ namespace DukeConsultantSprint1
             }
             else if (selected.Equals("Add Item"))
             {
-                Response.Redirect("EmpAddItem.aspx");
+                Response.Redirect("EmpAddItem.aspx");              
             }
             else if (selected.Equals("Add Service"))
             {

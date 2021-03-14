@@ -27,6 +27,7 @@ namespace DukeConsultantSprint1
         protected void btnGoToHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("EmpHomepage.aspx");
+            
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DukeConsultantSprint1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ddlAuction.Items.Add("Add at Later Date");
         }
         protected void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -54,14 +54,15 @@ namespace DukeConsultantSprint1
                 queryResults1.Close();
                 sqlConnect1.Close();
                 //Add new item to inventory. Uses parameters.
-                string sqlQuery2 = "Insert into Inventory(itemID, itemName, itemValue) VALUES (@ItemID, @ItemName, @EstValue)";
+                string sqlQuery2 = "Insert into Inventory(itemID, itemName, itemDesc, itemValue) VALUES (@ItemID, @ItemName, @itemDesc, @EstValue)";
                 SqlConnection sqlConnect2 = new SqlConnection
                     (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery2, sqlConnect2);
                 insertCommand.Connection = sqlConnect2;
                 insertCommand.Parameters.AddWithValue("@ItemID", currentItemID);
                 insertCommand.Parameters.AddWithValue("@ItemName", txtItemName.Text);
-                insertCommand.Parameters.AddWithValue("@EstValue", txtEstValue.Text); ;
+                insertCommand.Parameters.AddWithValue("@ItemDesc", txtItemDesc.Text);
+                insertCommand.Parameters.AddWithValue("@EstValue", txtEstValue.Text); 
                 sqlConnect2.Open();
                 SqlDataReader queryResults2 = insertCommand.ExecuteReader();
                 queryResults2.Close();
@@ -78,11 +79,41 @@ namespace DukeConsultantSprint1
                 SqlDataReader queryResults3 = insertCommand2.ExecuteReader();
                 queryResults3.Close();
                 sqlConnect3.Close();
+
+                string chosenAID = ddlAuction.SelectedValue.ToString();               
+                string aTemp = "";
+                int aID = 0;
+                int dashIndex2 = chosenAID.IndexOf(separator);
+                //Takes auctionID from the concatenation statement to know which auction
+                if (dashIndex2 > 0)
+                {
+                    aTemp = chosenAID.Substring(0, dashIndex2);
+                    aID = int.Parse(aTemp);
+                }
+                if (ddlAuction.Visible == true)
+                {
+                    if (!(ddlAuction.Text.Equals("Add at Later Date")))
+                    {
+                        string sqlQuery5 = "INSERT INTO AuctionInventory(ItemID, AuctionID) VALUES (@itemID, @aID)";
+                        SqlConnection sqlConnect5 = new SqlConnection
+                            (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
+                        SqlCommand insertCommand5 = new SqlCommand(sqlQuery5, sqlConnect5);
+                        insertCommand5.Connection = sqlConnect5;
+                        insertCommand5.Parameters.AddWithValue("@itemID", currentItemID);
+                        insertCommand5.Parameters.AddWithValue("@aID", aID);
+                        sqlConnect5.Open();
+                        SqlDataReader queryResults5 = insertCommand5.ExecuteReader();
+                        queryResults5.Close();
+                        sqlConnect5.Close();                        
+                    }
+                }
+                lblSaveStatus.ForeColor = Color.Green;
                 lblSaveStatus.Text = "Save Successful!";
             }
             //Catches SQL Exceptions And displays a message to user
             catch (SqlException)
             {
+                lblSaveStatus.ForeColor = Color.Red;
                 lblSaveStatus.Text = "Save Unsuccessful. Please Try Again.";
             }
         }
@@ -91,6 +122,95 @@ namespace DukeConsultantSprint1
         {
             txtEstValue = null;
             txtItemName = null;
+            txtItemDesc = null;
+            txtCSearch = null;
+        }
+        protected Boolean isAuction(string service)
+        {
+            Boolean auction = false;
+            string aletters = "AUCTION";
+            service = service.ToUpper();
+            if (service.Contains(aletters))
+            {
+                auction = true;
+            }
+            return auction;
+        }
+
+        protected void serviceList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string testString = serviceList.SelectedValue.ToString();
+            if (isAuction(testString))
+            {
+                lblAddAuction.Visible = true;
+                chkAdd.Visible = true;
+            }
+            else
+            {
+                lblAddAuction.Visible = false;
+                ddlAuction.Visible = false;
+                chkAdd.Visible = false;
+            }
+        }
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            lblAddAuction.Visible = false;
+            ddlAuction.Visible = false;
+            chkAdd.Visible = false;
+            serviceList.Items.Clear();
+            ddlCustomers.Items.Clear();
+            string enteredName = txtCSearch.Text;
+            string sqlQuery2 = "SELECT CONCAT(cFName, ' ', cLName) FROM Customer WHERE UPPER(CONCAT(cFName, ' ', cLName)) LIKE UPPER(@cName)";
+            SqlConnection sqlConnect2 = new SqlConnection
+                (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
+            SqlCommand selectCommand = new SqlCommand(sqlQuery2, sqlConnect2);
+            selectCommand.Connection = sqlConnect2;
+            selectCommand.Parameters.AddWithValue("@cName", "%" + enteredName + "%");
+            sqlConnect2.Open();
+            SqlDataReader queryResults2 = selectCommand.ExecuteReader();
+            while (queryResults2.Read())
+            {
+                ddlCustomers.Items.Add(queryResults2[0].ToString());
+            }
+            sqlConnect2.Close();
+            queryResults2.Close();
+        }
+
+        protected void btnSelect_Click(object sender, EventArgs e)
+        {
+            lblAddAuction.Visible = false;
+            ddlAuction.Visible = false;
+            chkAdd.Visible = false;
+            serviceList.Items.Clear();
+            string chosenCName = ddlCustomers.SelectedValue.ToString();
+            string enteredName = txtCSearch.Text;
+            string sqlQuery2 = "select CONCAT(ServiceTicket.stID, '-- ', Service.sType, ' ', Service.sDate), CONCAT(Customer.cFName, ' ', Customer.cLName), Service.sType from Customer right join ServiceTicket on ServiceTicket.CID = Customer.CID right join Service on Service.sID = ServiceTicket.sID WHERE CONCAT(cFName, ' ', cLName) = @cName";
+            SqlConnection sqlConnect2 = new SqlConnection
+                (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
+            SqlCommand selectCommand = new SqlCommand(sqlQuery2, sqlConnect2);
+            selectCommand.Connection = sqlConnect2;
+            selectCommand.Parameters.AddWithValue("@cName", chosenCName);
+            sqlConnect2.Open();
+            SqlDataReader queryResults2 = selectCommand.ExecuteReader();
+            while (queryResults2.Read())
+            {
+                serviceList.Items.Add(queryResults2[0].ToString());
+            }
+            sqlConnect2.Close();
+            queryResults2.Close();
+            serviceList.SelectedValue = null;
+        }
+
+        protected void chkAdd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAdd.Checked)
+            {
+                ddlAuction.Visible = true;
+            }
+            else
+            {
+                ddlAuction.Visible = false;
+            }
         }
     }
 }
