@@ -19,7 +19,7 @@ namespace DukeConsultantSprint1
             {
                 string sqlQuery7 = "SELECT ServiceRequest.sType, Concat(Customer.cFName, ' ', Customer.cLName), FORMAT(ServiceRequest.sDate, 'yyyy-MM-dd'), ServiceRequest.originAddress, ServiceRequest.delAdd From ServiceRequest INNER Join Customer on Customer.cID = serviceRequest.cID Where ServiceRequest.srID = " + Session["activeSR"];
                 SqlConnection sqlConnect7 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand7 = new SqlCommand();
                 sqlCommand7.Connection = sqlConnect7;
                 sqlCommand7.CommandType = CommandType.Text;
@@ -98,7 +98,7 @@ namespace DukeConsultantSprint1
                 //Establishes query string and connaction to get the employee ID based on the name selected by the system user.
                 string sqlQuery = "Select eID from Employee WHERE eName = @EmpName";
                 SqlConnection sqlConnect = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand = new SqlCommand(sqlQuery, sqlConnect);
                 selectCommand.Connection = sqlConnect;
                 selectCommand.Parameters.AddWithValue("@EmpName", stSelectedEmp);
@@ -114,7 +114,7 @@ namespace DukeConsultantSprint1
                 //Establishes a unique serviceID for the service being added.
                 string sqlQuery1 = "Select max(sID) as maxSID from Service";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand1 = new SqlCommand();
                 sqlCommand1.Connection = sqlConnect1;
                 sqlCommand1.CommandType = CommandType.Text;
@@ -132,7 +132,7 @@ namespace DukeConsultantSprint1
                 //Establishes a unique service ticket ID for the Ticket being added
                 string sqlQuery2 = "Select max(stID) as maxstID from ServiceTicket";
                 SqlConnection sqlConnect2 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand2 = new SqlCommand();
                 sqlCommand2.Connection = sqlConnect2;
                 sqlCommand2.CommandType = CommandType.Text;
@@ -150,7 +150,7 @@ namespace DukeConsultantSprint1
                 //Finds customer ID based on chosen customer name
                 string sqlQuery5 = "Select cID from Customer WHERE CONCAT(cFName, ' ', cLName) = @Customer";
                 SqlConnection sqlConnect5 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand5 = new SqlCommand(sqlQuery5, sqlConnect5);
                 selectCommand5.Connection = sqlConnect5;
                 selectCommand5.Parameters.AddWithValue("@Customer", stAddCust);
@@ -169,7 +169,7 @@ namespace DukeConsultantSprint1
                     "ServiceTicket inner join Service on Service.sID = ServiceTicket.sID " +
                     "Where Service.sDate BETWEEN @sDate and @cDate or Service.sCompDate BETWEEN @sDate and @cDate or @sDate BETWEEN Service.sDate and Service.sCompDate or  @cDate BETWEEN Service.sDate and Service.sCompDate");
                 SqlConnection sqlConnect6 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand6 = new SqlCommand(sqlQuery6, sqlConnect6);
                 selectCommand6.Connection = sqlConnect1;
                 selectCommand6.Parameters.AddWithValue("@sDate", sSDate);
@@ -192,7 +192,7 @@ namespace DukeConsultantSprint1
                     string sqlQuery3 = "Insert into Service(sID, sType, sDate, sCost, sFromAdd, sDelAdd, sCompDate) " +
                     "VALUES(@sID, @sType, @sDate, @sCost, @fromAddress, @delAddress, @CompDate)";
                     SqlConnection sqlConnect3 = new SqlConnection
-                        (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                        (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                     SqlCommand insertCommand = new SqlCommand(sqlQuery3, sqlConnect3);
                     insertCommand.Connection = sqlConnect3;
                     insertCommand.Parameters.AddWithValue("@sID", currentSID);
@@ -210,7 +210,7 @@ namespace DukeConsultantSprint1
                     string sqlQuery4 = "Insert into ServiceTicket(stID, stODate, cID, sID, ieID) " +
                         "VALUES(@stID, @stOpenDate, @cID, @sID, @eID)";
                     SqlConnection sqlConnect4 = new SqlConnection
-                        (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                        (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                     SqlCommand insertCommand2 = new SqlCommand(sqlQuery4, sqlConnect4);
                     insertCommand2.Connection = sqlConnect4;
                     insertCommand2.Parameters.AddWithValue("@stID", currentstID);
@@ -225,7 +225,7 @@ namespace DukeConsultantSprint1
                     //Now we add a tickethistory record by finding the next available thID.
                     string sqlQuery8 = "Select max(thID) as maxthID from TicketHistory";
                     SqlConnection sqlConnect8 = new SqlConnection
-                        (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                        (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                     SqlCommand sqlCommand8 = new SqlCommand();
                     sqlCommand8.Connection = sqlConnect8;
                     sqlCommand8.CommandType = CommandType.Text;
@@ -244,7 +244,7 @@ namespace DukeConsultantSprint1
                     string sqlQuery9 = "Insert into TicketHistory(thID, thDate, thNoteTitle, thNote, stID, eID, stStatus) " +
                         "VALUES(@thID, @thOpenDate, @thNoteTitle, @thNote, @stID, @eID ,'Preparation')";
                     SqlConnection sqlConnect9 = new SqlConnection
-                        (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                        (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                     SqlCommand insertCommand3 = new SqlCommand(sqlQuery9, sqlConnect9);
                     insertCommand3.Connection = sqlConnect9;
                     insertCommand3.Parameters.AddWithValue("@thID", currentthID);
@@ -261,7 +261,7 @@ namespace DukeConsultantSprint1
                     {
                         string sqlQuery11 = "UPDATE ServiceRequest SET status = 'Accepted' WHERE srID = " + Session["activeSR"];
                         SqlConnection sqlConnect11 = new SqlConnection
-                            (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                            (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                         SqlCommand sqlCommand11 = new SqlCommand();
                         sqlCommand11.Connection = sqlConnect11;
                         sqlCommand11.CommandType = CommandType.Text;

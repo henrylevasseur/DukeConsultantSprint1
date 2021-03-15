@@ -38,7 +38,7 @@ namespace DukeConsultantSprint1
                 //Query and connection established to find vehicle ID based on the selected Name, uses parameters.
                 string sqlQuery1 = "Select vID from Vehicle WHERE vName = @vName";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand = new SqlCommand(sqlQuery1, sqlConnect1);
                 selectCommand.Connection = sqlConnect1;
                 selectCommand.Parameters.AddWithValue("@vName", chosenVName);
@@ -54,7 +54,7 @@ namespace DukeConsultantSprint1
                 //Adds row to bridge table based on information in UI.
                 string sqlQuery2 = "Insert into SerVehc(stID, vID) VALUES (@stID, @vID)";
                 SqlConnection sqlConnect2 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery2, sqlConnect2);
                 insertCommand.Connection = sqlConnect2;
                 insertCommand.Parameters.AddWithValue("@stID", stID);

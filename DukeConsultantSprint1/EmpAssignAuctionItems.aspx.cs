@@ -36,7 +36,7 @@ namespace DukeConsultantSprint1
                 //Query and connection established to ensure that the items are not already assigned to an auction.
                 string sqlQuery2 = "Select count(stID) from AuctionInventory WHERE stID = @stID";
                 SqlConnection sqlConnect2 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand = new SqlCommand(sqlQuery2, sqlConnect2);
                 selectCommand.Connection = sqlConnect2;
                 selectCommand.Parameters.AddWithValue("@stID", stIDChosen);
@@ -74,7 +74,7 @@ namespace DukeConsultantSprint1
                     //Insert with parameters to get values in the bridge table. From here, joins can be used to show items in auctions.
                     string sqlQuery1 = "INSERT INTO AuctionInventory(stID, AuctionID) VALUES (@stID, @aID)";
                     SqlConnection sqlConnect1 = new SqlConnection
-                        (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                        (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                     SqlCommand insertCommand = new SqlCommand(sqlQuery1, sqlConnect1);
                     insertCommand.Connection = sqlConnect1;
                     insertCommand.Parameters.AddWithValue("@stID", stID);

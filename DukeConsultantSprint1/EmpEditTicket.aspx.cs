@@ -48,7 +48,7 @@ namespace DukeConsultantSprint1
                 //Create query and connection that provides a unique tickethistoryID for new record
                 string sqlQuery1 = "Select max(thID) as maxthID from TicketHistory";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand1 = new SqlCommand();
                 sqlCommand1.Connection = sqlConnect1;
                 sqlCommand1.CommandType = CommandType.Text;
@@ -66,7 +66,7 @@ namespace DukeConsultantSprint1
                 //Find employee ID based on Employee Name
                 string sqlQuery = "Select eID from Employee WHERE eName = @EmpName";
                 SqlConnection sqlConnect = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand = new SqlCommand(sqlQuery, sqlConnect);
                 selectCommand.Connection = sqlConnect;
                 selectCommand.Parameters.AddWithValue("@EmpName", thEmployee);
@@ -83,7 +83,7 @@ namespace DukeConsultantSprint1
                 string sqlQuery4 = "Insert into TicketHistory(thID, thDate ,thNoteTitle, thNote, stID, eID, stStatus) " +
                        "VALUES (@thID, @Date, @Title, @Note, @stID, @eID, @Status)";
                 SqlConnection sqlConnect4 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery4, sqlConnect4);
                 insertCommand.Connection = sqlConnect4;
                 insertCommand.Parameters.AddWithValue("@thID", currentthID);

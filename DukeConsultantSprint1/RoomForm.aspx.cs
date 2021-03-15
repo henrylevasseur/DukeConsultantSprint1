@@ -15,11 +15,6 @@ namespace DukeConsultantSprint1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void BtnAddRoom_Click(object sender, EventArgs e)
-        {
             if (!Page.IsPostBack)
             {
                 if (Session["Floor"] != null)
@@ -42,7 +37,7 @@ namespace DukeConsultantSprint1
             }
         }
 
-        protected void BtnAddRoom_Click1(object sender, EventArgs e)
+        protected void BtnAddRoom_Click(object sender, EventArgs e)
         {
             try
             {

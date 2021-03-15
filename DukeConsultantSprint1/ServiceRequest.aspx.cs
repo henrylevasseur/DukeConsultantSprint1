@@ -38,7 +38,7 @@ namespace DukeConsultantSprint1
                 string cUsername = Session["UserName"].ToString();
                 string sqlQuery1 = "Select cID from Customer WHERE cEmail = @Username";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand selectCommand = new SqlCommand(sqlQuery1, sqlConnect1);
                 selectCommand.Connection = sqlConnect1;
                 selectCommand.Parameters.AddWithValue("@Username", cUsername);
@@ -52,7 +52,7 @@ namespace DukeConsultantSprint1
                 //Pull the highest service request and add one to ensure you have a unique ID
                 string sqlQuery2 = "Select max(srID) as srID from ServiceRequest";
                 SqlConnection sqlConnect2 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand2 = new SqlCommand();
                 sqlCommand2.Connection = sqlConnect2;
                 sqlCommand2.CommandType = CommandType.Text;
@@ -81,7 +81,7 @@ namespace DukeConsultantSprint1
                 }
                 //Connect and use parameters before inserting records.
                 SqlConnection sqlConnect4 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery4, sqlConnect4);
                 insertCommand.Connection = sqlConnect4;
                 insertCommand.Parameters.AddWithValue("@srID", currentsrID);

@@ -35,7 +35,7 @@ namespace DukeConsultantSprint1
                 //SQL Query established a connection, Finds the maximum customer, and sets a variable to the integer of that customer +1 so that new customers will have a unique Identifier.
                 string sqlQuery1 = "Select max(cID) as maxCID from Customer";
                 SqlConnection sqlConnect1 = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand sqlCommand1 = new SqlCommand();
                 sqlCommand1.Connection = sqlConnect1;
                 sqlCommand1.CommandType = CommandType.Text;
@@ -78,7 +78,7 @@ namespace DukeConsultantSprint1
                 string sqlQuery = "Insert into Customer(cID, cFName, cLName, cAddress, cPhone, cPhoneType, cDesc, cEmail, cInitialContactType) " +
                     "VALUES(@cID, @FirstName, @LastName, @Address, @Phone, @PhoneType, @Desc, @Email, @ContactType)";
                 SqlConnection sqlConnect = new SqlConnection
-                    (WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+                    (WebConfigurationManager.ConnectionStrings["Sprint1"].ConnectionString);
                 SqlCommand insertCommand = new SqlCommand(sqlQuery, sqlConnect);
                 insertCommand.Connection = sqlConnect;
                 insertCommand.Parameters.AddWithValue("@cID", currentCID);

@@ -49,7 +49,7 @@ namespace DukeConsultantSprint1
                 lblStatus.ForeColor = Color.Green;
                 lblStatus.Text = "You had Submit Your House Form";
                 Session["Floor"] = txtStories.Text;
-                Response.Redirect("test.aspx");
+                Response.Redirect("RoomForm.aspx");
 
             }
             catch

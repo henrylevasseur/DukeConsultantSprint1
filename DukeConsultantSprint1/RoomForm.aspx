@@ -167,7 +167,7 @@
     <asp:Table ID="Table5" runat="server">
         <asp:TableRow>
             <asp:TableCell>
-                <asp:Button ID="BtnAddRoom" runat="server" Text="Add Room" OnClick="BtnAddRoom_Click1" ValidationGroup="AddRoom" />
+                <asp:Button ID="BtnAddRoom" runat="server" Text="Add Room" OnClick="BtnAddRoom_Click" ValidationGroup="AddRoom" />
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>

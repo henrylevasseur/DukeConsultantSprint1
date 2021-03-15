@@ -121,13 +121,13 @@
                 <asp:SqlDataSource
                     ID="custList"
                     runat="server"
-                    ConnectionString="<%$ ConnectionStrings:Lab3 %>"
+                    ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
                     SelectCommand="Select Concat(Customer.cFName, ' ', Customer.cLName) AS cName From Customer">
                 </asp:SqlDataSource>
                 <asp:SqlDataSource
                     ID="empList"
                     runat="server"
-                    ConnectionString="<%$ ConnectionStrings:Lab3 %>"
+                    ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
                     SelectCommand="Select eName from Employee">
                 </asp:SqlDataSource>
             </fieldset>

@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="lblTitle" runat="server" Text="House Form" Font-Bold="true" Font-Size="X-Large"></asp:Label>
     <asp:Table ID="Table1" runat="server">
         <asp:TableRow>
             <asp:TableCell>
