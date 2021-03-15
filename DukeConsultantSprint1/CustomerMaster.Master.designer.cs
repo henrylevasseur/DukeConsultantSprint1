@@ -78,6 +78,15 @@ namespace DukeConsultantSprint1
         protected global::System.Web.UI.WebControls.Button btnLogout;
 
         /// <summary>
+        /// btnHomepage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHomepage;
+
+        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>

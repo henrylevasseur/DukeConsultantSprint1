@@ -27,5 +27,10 @@ namespace DukeConsultantSprint1
             Session.Abandon();
             Response.Redirect("LoginType.aspx?loggedout=true");
         }
+
+        protected void btnHomepage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerHomepage.aspx");
+        }
     }
 }

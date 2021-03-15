@@ -13,9 +13,18 @@ namespace DukeConsultantSprint1
         {
 
         }
-        protected void btnSR_Click(object sender, EventArgs e)
+
+        protected void btnProceed_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ServiceRequest.aspx");
+            string selected = ddlCustItems.Text;
+            if (selected.Equals("Create Service Request"))
+            {
+                Response.Redirect("ServiceRequest.aspx");
+            }
+            else if (selected.Equals("Add Items to Service"))
+            {
+                Response.Redirect("CustomerAddItems.aspx");
+            }
         }
     }
 }

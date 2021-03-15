@@ -15,16 +15,19 @@
             <asp:Table ID="Table1" runat="server">
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="lblCPortal" runat="server" Text="Customer Portal" Font-Bold Font-Size ="20"></asp:Label>
+                        <asp:Label ID="lblCPortal" runat="server" Text="Customer Portal" Font-Bold Font-Size ="18"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Label ID="masterNames" runat="server" Text="Henry LeVasseur and Patrick Sullivan, Dr. Ezell Section 4" Font-Bold Font-Size ="20"></asp:Label>
+                        <asp:Label ID="masterNames" runat="server" Text="Duke Consultant, Dr. Ezell Section 4" Font-Bold Font-Size ="18"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Label ID="lblUser" runat="server" Text="" ForeColor="Green" Font-Size="20"></asp:Label>
+                        <asp:Label ID="lblUser" runat="server" Text="" ForeColor="Green" Font-Size="18"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:Button ID="btnLogout" runat="server" Text="Log Out" OnClick="btnLogout_Click" />
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnHomepage" runat="server" Text="Return Home" OnClick="btnHomepage_Click" />
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>

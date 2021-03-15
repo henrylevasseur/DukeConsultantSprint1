@@ -9,8 +9,14 @@
                 <br />
                 <%-- Create Label, Button to Fill out a service request --%>
                 <asp:Label ID="loginHeader" runat="server" Text="Welcome to the System! Please Select an Action from the Dropdown Menu." Font-Bold Font-Size ="20"></asp:Label>
-                <br /> 
-                <asp:Button ID="btnSR" runat="server" Text="Apply Service Request" OnClick="btnSR_Click" />
+                <br />
+                <asp:DropDownList ID="ddlCustItems" runat="server">
+                    <asp:ListItem Selected ="True" Value ="Create Service Request"></asp:ListItem>
+                    <asp:ListItem Value ="Add Items to Service"></asp:ListItem>
+                </asp:DropDownList>
+                <br />
+                <asp:Button ID="btnProceed" runat="server" Text="Proceed" OnClick="btnProceed_Click"/>
+                <br />
             </div>
         </body>
     </html>

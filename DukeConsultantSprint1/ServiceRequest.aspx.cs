@@ -23,11 +23,6 @@ namespace DukeConsultantSprint1
             txtOrigin = null;
             txtServDate = null;
         }
-        //Redirects to homepage on click.
-        protected void cancelBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("CustomerHomepage.aspx");
-        }
         // Save button saves service request information
         protected void saveBtn_Click(object sender, EventArgs e)
         {

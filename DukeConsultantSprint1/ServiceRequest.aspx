@@ -49,40 +49,38 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Label ID="lblAddOn" runat="server" Text="Add-On Services" Font-Bold Font-Size="14"></asp:Label>
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Label runat="server" Text="Cleaning:"  ></asp:Label>
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:CheckBox ID="chkCleaning" runat="server" />
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Label runat="server" Text="Storage:"  ></asp:Label>
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:CheckBox ID="chkStorage" runat="server" />
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Label runat="server" Text="Trash Removal:"  ></asp:Label>
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:CheckBox ID="chkTrashRemoval" runat="server" />
-                        </asp:TableCell>
-                    </asp:TableRow>
-            </asp:Table>
+                <asp:TableCell>
+                    <asp:Label ID="lblAddOn" runat="server" Text="Add-On Services" Font-Bold Font-Size="14"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Cleaning:"  ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:CheckBox ID="chkCleaning" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Storage:"  ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:CheckBox ID="chkStorage" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label runat="server" Text="Trash Removal:"  ></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:CheckBox ID="chkTrashRemoval" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+    </asp:Table>
         <asp:Button ID="saveBtn" runat="server" ValidationGroup="saveValidation" Text="Save" OnClick="saveBtn_Click" />
         &nbsp;
         <asp:Button ID="clearBtn" runat="server" Text="Clear" OnClick="clearBtn_Click"/>
-        &nbsp;
-        <asp:Button ID="cancelBtn" runat="server" Text="Return to Home" OnClick="cancelBtn_Click" />
         <br />
     <asp:Label ID="lblSaveStatus" runat="server" Text=""></asp:Label>
 </asp:Content>

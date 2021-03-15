@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreateAccount.aspx" />
+    <Content Include="CustomerAddItems.aspx" />
     <Content Include="CustomerHomepage.aspx" />
     <Content Include="EmpAddCustomer.aspx" />
     <Content Include="EmpAddItem.aspx" />
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="CreateAccount.aspx.designer.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAddItems.aspx.cs">
+      <DependentUpon>CustomerAddItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerAddItems.aspx.designer.cs">
+      <DependentUpon>CustomerAddItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerHomepage.aspx.cs">
       <DependentUpon>CustomerHomepage.aspx</DependentUpon>

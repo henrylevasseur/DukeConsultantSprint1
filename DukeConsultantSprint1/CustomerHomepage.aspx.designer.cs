@@ -24,12 +24,21 @@ namespace DukeConsultantSprint1
         protected global::System.Web.UI.WebControls.Label loginHeader;
 
         /// <summary>
-        /// btnSR control.
+        /// ddlCustItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSR;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCustItems;
+
+        /// <summary>
+        /// btnProceed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnProceed;
     }
 }
