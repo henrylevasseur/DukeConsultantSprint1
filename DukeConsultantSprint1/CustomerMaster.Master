@@ -6,28 +6,31 @@
 <head runat="server">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
+        
     </asp:ContentPlaceHolder>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <%-- In a Table with a single row, Include Our Names, A message regarding Login status, and a Logout button --%>
         <div>
-            <asp:Table ID="Table1" runat="server">
+            <asp:Image ID="Image1" runat="server" ImageUrl ="/image/GVA_MLogo__BW.jpg" ControlStyle-Width="300px" ShowHeader="False" />
+            <asp:Table ID="Table1" runat="server"  class="table-warning">
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="lblCPortal" runat="server" Text="Customer Portal" Font-Bold Font-Size ="18"></asp:Label>
+                        <asp:Label ID="lblCPortal" runat="server" Text="Customer Portal" Font-Bold Font-Size ="15" Font-Name="Open Sans"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Label ID="masterNames" runat="server" Text="Duke Consultant, Dr. Ezell Section 4" Font-Bold Font-Size ="18"></asp:Label>
+                        <asp:Label ID="masterNames" runat="server" Text="Duke Consultant, Dr. Ezell Section 4" Font-Bold Font-Size ="15"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Label ID="lblUser" runat="server" Text="" ForeColor="Green" Font-Size="18"></asp:Label>
+                        <asp:Label ID="lblUser" runat="server" Text="" ForeColor="Green" Font-Size="15"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnLogout" runat="server" Text="Log Out" OnClick="btnLogout_Click" />
+                        <asp:Button ID="btnLogout" runat="server" Text="Log Out" OnClick="btnLogout_Click" class="btn btn-primary" type="submit"/>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:Button ID="btnHomepage" runat="server" Text="Return Home" OnClick="btnHomepage_Click" />
+                        <asp:Button ID="btnHomepage" runat="server" Text="Return Home" OnClick="btnHomepage_Click" class="btn btn-primary" type="submit"/>
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
@@ -37,5 +40,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script src="Scripts/jquery-3.5.1.slim.js"></script>
+    <script src="Scripts/popper.min.js"></script>
 </body>
 </html>

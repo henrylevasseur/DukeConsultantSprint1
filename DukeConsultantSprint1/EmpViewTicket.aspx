@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMaster.Master" AutoEventWireup="true" CodeBehind="EmpViewTicket.aspx.cs" Inherits="DukeConsultantSprint1.EmpViewTicket" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%-- Henry LeVasseur and Patrick Sullivan--%>
@@ -12,13 +13,13 @@
                 <br />
                 <asp:DropDownList ID="viewDropDown" AutoPostBack="true" DataSourceID="servList" DataTextField="Service" runat="server"></asp:DropDownList>
                 <br />
-                <asp:Button ID="viewItemsBtn" runat="server" Text="View History" OnClick="viewItemsBtn_Click"/>  
+                <asp:Button ID="viewItemsBtn" runat="server" Text="View History" OnClick="viewItemsBtn_Click" class="btn btn-primary" type="submit"/>  
             </fieldset>
             <br />
             <fieldset>
                 <legend>History for Selected Service: </legend>
                 <asp:GridView runat="server" ID="grdShowItems" AlternatingRowStyle-BackColor="#eaaaff" EmptyDataText="NoCustomerSelected!"></asp:GridView>
-                <asp:Label ID="lblNote" runat="server"></asp:Label>
+                <asp:Label ID="lblNote" runat="server" BackColor="#FFE384"></asp:Label>
             </fieldset>
             <fieldset>
                 <asp:Table ID="Table1" runat="server">
@@ -43,7 +44,8 @@
                     ConnectionString="<%$ ConnectionStrings:Sprint1 %>"
                     SelectCommand="select CONCAT(ServiceTicket.stID, '-- ', Customer.cFName, ' ', Customer.cLName, ' ', Service.sType, ' ', Service.sDate) AS Service from Customer right join ServiceTicket on ServiceTicket.CID = Customer.CID right join Service on Service.sID = ServiceTicket.sID">      
             </asp:SqlDataSource>
-     
+     <script src="Scripts/jquery-3.5.1.slim.js"></script>
+    <script src="Scripts/popper.min.js"></script>
         </body>
 </html>
 </asp:Content>

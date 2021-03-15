@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMaster.Master" AutoEventWireup="true" CodeBehind="EmpAddService.aspx.cs" Inherits="DukeConsultantSprint1.EmpAddService" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <html>
@@ -9,9 +10,9 @@
             <br />
             <fieldset> 
                 <%-- Create Header followed by table with all necessary fields, validators, and data sources. --%>
-                <asp:Label ID="ServiceHeader" runat="server" Text="Please Enter Service Information Below" Font-Bold ="true" Font-Size ="20"></asp:Label>
+                <asp:Label ID="ServiceHeader" runat="server" Text="Please Enter Service Information Below" Font-Bold Font-Size ="15" Font-Name="Open Sans"></asp:Label>
                 <br />
-                <asp:Table ID="tableService" runat="server">
+                <asp:Table ID="tableService" runat="server" class="table-warning">
                     <asp:TableRow>
                         <asp:TableCell>
                             <asp:Label ID="lblServType" runat="server" Text="Service Type:  "></asp:Label>
@@ -39,7 +40,7 @@
                             <asp:Label runat="server" Text="Date Ticket Opened: "></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtOpenDate" runat="server" TextMode="Date"></asp:TextBox>
+                            <asp:TextBox ID="txtOpenDate" runat="server" TextMode="Date" type="Date " class="form-control" placeholder="Date"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="oDateValidator" runat="server" ControlToValidate="txtOpenDate" ValidationGroup="sSaveValidation" ErrorMessage="Please Enter an Opening Date" ForeColor ="Red"></asp:RequiredFieldValidator>
@@ -50,7 +51,7 @@
                             <asp:Label ID="lblServDate" runat="server" Text="Service Date:  " ></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtServDate" runat="server" TextMode="Date"></asp:TextBox>
+                            <asp:TextBox ID="txtServDate" runat="server" TextMode="Date" type="Date " class="form-control" placeholder="Date"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="srfServiceDateValidator" ControlToValidate="txtServDate" ValidationGroup="sSaveValidation" runat="server" ErrorMessage="Please Choose a Service Date" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -61,7 +62,7 @@
                             <asp:Label ID="lblServCost" runat="server" Text="Service Cost: "></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtServCost" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtServCost" runat="server" type="Service Cost " class="form-control" placeholder="Service Cost"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="srfValueValidator" ControlToValidate="txtServCost" ValidationGroup="sSaveValidation" runat="server" ErrorMessage="Please Enter a Service Cost" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -72,7 +73,7 @@
                             <asp:Label ID="lblOriginAddress" runat="server" Text="Origin Address: " Visible="true"></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtOrigin" runat="server" Visible ="true"></asp:TextBox>
+                            <asp:TextBox ID="txtOrigin" runat="server" Visible ="true" type="Origin Address " class="form-control" placeholder="Origin Address"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="origValidator" ControlToValidate="txtOrigin" ValidationGroup="sSaveValidation" runat="server" ErrorMessage="Enter Origin Address" ForeColor="Red" Visible="true"></asp:RequiredFieldValidator>
@@ -83,7 +84,7 @@
                             <asp:Label ID="lblDelivAdd" runat="server" Text="Delivery Address:"></asp:Label>
                         </asp:TableCell>
                          <asp:TableCell>
-                             <asp:TextBox ID="txtDelivAdd" runat="server"></asp:TextBox>
+                             <asp:TextBox ID="txtDelivAdd" runat="server" type="Delivery Address " class="form-control" placeholder="Delivery Address"></asp:TextBox>
                          </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="destValidator" ControlToValidate="txtDelivAdd" ValidationGroup="sSaveValidation" runat="server" ErrorMessage="Enter Destination Address" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -94,7 +95,7 @@
                             <asp:Label ID="lblComDate" runat="server" Text="Completion Date:  "></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox ID="txtComDate" runat="server" TextMode ="Date"></asp:TextBox>
+                            <asp:TextBox ID="txtComDate" runat="server" TextMode ="Date" type="Completion Date " class="form-control" placeholder="Completion Date"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:RequiredFieldValidator ID="rfCompletionValidation" ControlToValidate ="txtComDate" ValidationGroup="sSaveValidation" runat="server" ErrorMessage="Please Choose a Completion Date" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -138,14 +139,14 @@
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
-                <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click"/>
+                <asp:Button ID="btnPopulate" runat="server" Text="Populate" OnClick="btnPopulate_Click" class="btn btn-primary" type="submit"/>
                 &nbsp;
-                <asp:Button ID="btnSave" runat="server" ValidationGroup="sSaveValidation" Text="Save" OnClick="btnSave_Click"/>
+                <asp:Button ID="btnSave" runat="server" ValidationGroup="sSaveValidation" Text="Save" OnClick="btnSave_Click" class="btn btn-primary" type="submit"/>
                 &nbsp;
-                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"/>
+                <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" type="button" class="btn btn-outline-primary"/>
                 <br />
                 <br />
-                <asp:Label ID="serviceSaveStatus" runat="server" Text=""></asp:Label>
+                <asp:Label ID="serviceSaveStatus" runat="server" Text=""  BackColor="#FFE384"></asp:Label>
                 <%-- Data sources populate customer and employee boxes --%>
                 <asp:SqlDataSource
                     ID="custList"
@@ -161,6 +162,8 @@
                 </asp:SqlDataSource>
             </fieldset>
         </div>
+            <script src="Scripts/jquery-3.5.1.slim.js"></script>
+    <script src="Scripts/popper.min.js"></script>
     </body>
 </html>
 </asp:Content>

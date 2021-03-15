@@ -21,6 +21,10 @@ namespace DukeConsultantSprint1
             {
                 Response.Redirect("ServiceRequest.aspx");
             }
+            else if (selected.Equals("Moving Information"))
+            {
+                Response.Redirect("House Form.aspx");
+            }
             else if (selected.Equals("Add Items to Service"))
             {
                 Response.Redirect("CustomerAddItems.aspx");
