@@ -16,6 +16,14 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
+                <asp:Label ID="lblBasement" runat="server" Text="Have Basement?" Font-Bold="true"></asp:Label>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:CheckBox ID="CBBasement" runat="server"/>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
                 <asp:Label ID="lblTruckDistance" runat="server" Text="Distance from Truck: " Font-Bold="true"></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
@@ -30,7 +38,7 @@
                 <asp:Label ID="lblDrivewayAccessibility" runat="server" Text="Driveway Accessibility: " Font-Bold="true"></asp:Label>
             </asp:TableCell>
             <asp:TableCell>
-                <asp:TextBox ID="txtDrivewayAccessibility" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtDrivewayAccessibility" runat="server" Rows="10" Columns="30" TextMode="MultiLine"></asp:TextBox>
             </asp:TableCell>
             <asp:TableCell>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtDrivewayAccessibility" Text="Please Enter the Driveway Accessibility" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -56,4 +64,5 @@
             </asp:TableCell>
         </asp:TableRow>
     </asp:Table>
+    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 </asp:Content>
